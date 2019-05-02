@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lspan-application-http
+  labels:
+    app: lspan-application-http
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lspan-application-http
+  template:
+    metadata:
+      labels:
+        app: lspan-application-http
+    spec:
+      containers:
+        - name: lspan-application-http
+          image: <image url>
+          ports:
+            - containerPort: 8080
